@@ -217,5 +217,5 @@ See also code table:
 
 SEE ALSO
 
-perl, Sjis.pm
+perl, Latin7.pm, Elatin7.pm, jacode.pl
 
