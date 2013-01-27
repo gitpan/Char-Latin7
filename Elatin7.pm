@@ -27,7 +27,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.85 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.86 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -2578,7 +2578,8 @@ sub Latin7::reverse(@) {
 #
 sub Latin7::getc(;*@) {
 
-    my $fh = @_ ? qualify_to_ref(shift) : \*STDIN;
+    my($package) = caller;
+    my $fh = @_ ? qualify_to_ref(shift,$package) : \*STDIN;
     croak 'Too many arguments for Latin7::getc' if @_ and not wantarray;
 
     my @length = sort { $a <=> $b } keys %range_tr;
