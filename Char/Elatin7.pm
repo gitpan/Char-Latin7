@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -398,7 +398,6 @@ sub Char::Latin7::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -427,7 +426,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Char::Elatin7::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Char::Elatin7::dot}         = qr{(?:[^\x0A])};
 ${Char::Elatin7::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Char::Elatin7::eD}          = qr{(?:[^0-9])};
@@ -463,6 +462,35 @@ ${Char::Elatin7::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Char::Elatin7::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Char::Elatin7::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Char::Elatin7::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Char::Elatin7::foo" used only once: possible typo at here.
+${Char::Elatin7::dot}         = ${Char::Elatin7::dot};
+${Char::Elatin7::dot_s}       = ${Char::Elatin7::dot_s};
+${Char::Elatin7::eD}          = ${Char::Elatin7::eD};
+${Char::Elatin7::eS}          = ${Char::Elatin7::eS};
+${Char::Elatin7::eW}          = ${Char::Elatin7::eW};
+${Char::Elatin7::eH}          = ${Char::Elatin7::eH};
+${Char::Elatin7::eV}          = ${Char::Elatin7::eV};
+${Char::Elatin7::eR}          = ${Char::Elatin7::eR};
+${Char::Elatin7::eN}          = ${Char::Elatin7::eN};
+${Char::Elatin7::not_alnum}   = ${Char::Elatin7::not_alnum};
+${Char::Elatin7::not_alpha}   = ${Char::Elatin7::not_alpha};
+${Char::Elatin7::not_ascii}   = ${Char::Elatin7::not_ascii};
+${Char::Elatin7::not_blank}   = ${Char::Elatin7::not_blank};
+${Char::Elatin7::not_cntrl}   = ${Char::Elatin7::not_cntrl};
+${Char::Elatin7::not_digit}   = ${Char::Elatin7::not_digit};
+${Char::Elatin7::not_graph}   = ${Char::Elatin7::not_graph};
+${Char::Elatin7::not_lower}   = ${Char::Elatin7::not_lower};
+${Char::Elatin7::not_lower_i} = ${Char::Elatin7::not_lower_i};
+${Char::Elatin7::not_print}   = ${Char::Elatin7::not_print};
+${Char::Elatin7::not_punct}   = ${Char::Elatin7::not_punct};
+${Char::Elatin7::not_space}   = ${Char::Elatin7::not_space};
+${Char::Elatin7::not_upper}   = ${Char::Elatin7::not_upper};
+${Char::Elatin7::not_upper_i} = ${Char::Elatin7::not_upper_i};
+${Char::Elatin7::not_word}    = ${Char::Elatin7::not_word};
+${Char::Elatin7::not_xdigit}  = ${Char::Elatin7::not_xdigit};
+${Char::Elatin7::eb}          = ${Char::Elatin7::eb};
+${Char::Elatin7::eB}          = ${Char::Elatin7::eB};
 
 #
 # Latin-7 split
