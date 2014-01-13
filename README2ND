@@ -1,14 +1,12 @@
 NAME
 
-       Char::Latin7 - Source code filter for Latin-7 script (Imitation JPerl)
+       Latin7 - Source code filter for Latin-7 script (Imitation JPerl)
 
 SYNOPSIS
 
     In your script:
 
-      use Char::Latin7; # CPAN formal style
-         or
-      use Latin7; # casual style
+      use Latin7;
 
     At command prompt:
 
