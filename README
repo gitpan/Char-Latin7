@@ -12,7 +12,7 @@ DESCRIPTION
   environment in Latin-7 by easy installation and easy usage.
 
   - Character oriented regular expression
-  - Character oriented run-time routines
+  - Character oriented runtime routines
   - Character oriented subroutines
       and
   - Byte oriented CORE::* functions
@@ -45,6 +45,7 @@ INSTALLATION
 
 SUBROUTINES
 
+  Latin7::eval(charstring)
   Latin7::length(charstring)
   Latin7::substr(charstring, charpos, charlen)
   and more...
